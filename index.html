@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rufaro Lynn Mahere — Cybersecurity Professional</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --accent:#00c8e8;
+  --accent2:#4fc3f7;
+  --text-dark:#1e2d3d;
+  --text-mid:#4a5568;
+  --text-light:#718096;
+  --bg:#fff;
+  --bg-alt:#f7f9fc;
+  --border:#e2e8f0;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --sw:280px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,sans-serif;display:flex;min-height:100vh;background:var(--bg);color:var(--text-dark);}
+
+/* ── SIDEBAR ─────────────────────────────────────────────── */
+.sidebar{
+  width:var(--sw);min-height:100vh;
+  background:linear-gradient(160deg,#0d1b2a 0%,#1a3a5c 60%,#1e4a7a 100%);
+  position:fixed;left:0;top:0;
+  display:flex;flex-direction:column;align-items:center;
+  padding:40px 0 30px;z-index:100;
+  box-shadow:4px 0 20px rgba(0,0,0,0.2);
+}
+.profile-img-wrap{
+  width:110px;height:110px;border-radius:50%;
+  border:4px solid rgba(255,255,255,0.9);overflow:hidden;
+  margin-bottom:14px;background:#1a3a5c;
+  display:flex;align-items:center;justify-content:center;
+}
+.profile-img-wrap img{width:100%;height:100%;object-fit:cover;}
+.ph{font-size:38px;font-weight:700;color:rgba(255,255,255,0.7);}
+.sb-name{color:#fff;font-size:15px;font-weight:700;text-align:center;padding:0 20px;margin-bottom:4px;}
+.sb-title{color:rgba(255,255,255,0.55);font-size:11px;text-align:center;padding:0 20px;line-height:1.4;margin-bottom:14px;}
+.sb-wave{width:100%;margin:8px 0;}
+.sb-wave svg{width:100%;display:block;}
+.socials{display:flex;gap:10px;margin-bottom:28px;}
+.soc{
+  width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.3);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.65);font-size:13px;
+  text-decoration:none;transition:.2s;
+}
+.soc:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,200,232,0.1);}
+.sb-nav{width:100%;padding:0 14px;flex:1;}
+.nav-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;border-radius:8px;
+  color:rgba(255,255,255,0.58);cursor:pointer;
+  transition:.2s;margin-bottom:3px;font-size:13.5px;font-weight:500;
+  text-decoration:none;border-left:3px solid transparent;
+}
+.nav-item:hover{color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.07);}
+.nav-item.active{color:var(--accent);background:rgba(0,200,232,0.08);border-left-color:var(--accent);}
+.nav-item i{width:17px;text-align:center;}
+
+/* ── MAIN ─────────────────────────────────────────────────── */
+.main{margin-left:var(--sw);flex:1;}
+section{padding:80px 60px;}
+.sec-title{font-size:32px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.sec-line{width:50px;height:3px;background:var(--accent);border-radius:2px;margin-bottom:14px;}
+.sec-sub{color:var(--text-light);font-size:14.5px;margin-bottom:40px;max-width:620px;line-height:1.6;}
+
+/* ── HOME ─────────────────────────────────────────────────── */
+#home{
+  background:linear-gradient(135deg,#0d1b2a 0%,#1a3a5c 55%,#1e5080 100%);
+  display:flex;align-items:center;justify-content:space-between;
+  min-height:100vh;gap:40px;
+}
+.home-content{flex:1;max-width:580px;}
+.home-greet{color:rgba(255,255,255,0.55);font-size:13px;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+.home-name{color:#fff;font-size:clamp(34px,3.5vw,52px);font-weight:800;line-height:1.1;margin-bottom:16px;}
+.home-typing{font-size:21px;font-weight:600;color:#fff;margin-bottom:22px;}
+.home-typing span{color:var(--accent);}
+#tcursor{display:inline-block;width:2px;height:1em;background:var(--accent);vertical-align:middle;margin-left:2px;animation:blink .8s step-end infinite;}
+@keyframes blink{50%{opacity:0;}}
+.home-creds{color:rgba(255,255,255,0.72);font-size:13.5px;line-height:1.7;margin-bottom:30px;}
+.home-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 26px;border-radius:50px;font-size:13.5px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.2s;}
+.btn-p:hover{background:#00a8c8;transform:translateY(-2px);}
+.btn-o{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:12px 26px;border-radius:50px;font-size:13.5px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.45);cursor:pointer;transition:.2s;}
+.btn-o:hover{border-color:#fff;transform:translateY(-2px);}
+.home-img{flex:0 0 400px;max-width:400px;}
+.home-img-box{
+  width:400px;height:280px;
+  background:linear-gradient(135deg,#0a1628,#1a3a5c);
+  border-radius:16px;border:1px solid rgba(0,200,232,0.3);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.home-img-box i{font-size:80px;color:rgba(0,200,232,0.45);}
+.home-emoji{font-size:80px;animation:float 3s ease-in-out infinite;display:inline-block;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+
+/* ── ABOUT ─────────────────────────────────────────────────── */
+#about{background:var(--bg);}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;margin-top:40px;}
+.about-left{display:flex;flex-direction:column;gap:16px;}
+.about-photo{
+  width:210px;height:210px;border-radius:50%;
+  border:6px solid var(--accent);overflow:hidden;
+  background:#e2e8f0;display:flex;align-items:center;justify-content:center;
+}
+.about-photo img{width:100%;height:100%;object-fit:cover;}
+.aph{font-size:64px;font-weight:700;color:var(--accent);}
+.info-list{width:100%;}
+.info-item{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid var(--border);}
+.info-item:last-child{border-bottom:none;}
+.info-icon{width:32px;height:32px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;flex-shrink:0;}
+.info-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);}
+.info-val{font-size:13px;font-weight:600;color:var(--text-dark);}
+.info-val a{color:var(--accent);text-decoration:none;}
+.info-val.green{color:#22c55e;}
+.about-right{}
+.about-h{font-size:21px;font-weight:700;color:var(--text-dark);margin-bottom:14px;}
+.about-p{color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:14px;}
+.stats{display:flex;gap:16px;margin:24px 0;}
+.stat-c{flex:1;background:var(--bg-alt);border-radius:12px;padding:18px;text-align:center;border:1px solid var(--border);transition:.3s;cursor:default;}
+.stat-c:hover{border-color:var(--accent);box-shadow:0 0 10px rgba(0,200,232,0.2),0 0 22px rgba(0,200,232,0.08);transform:translateY(-2px);}
+.stat-n{font-size:26px;font-weight:800;color:var(--accent);display:block;}
+.stat-l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-top:4px;}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;}
+.meta-row{display:flex;gap:10px;}
+.meta-k{font-size:11.5px;color:var(--accent);font-weight:600;min-width:100px;}
+.meta-v{font-size:11.5px;color:var(--text-dark);}
+
+/* ── SKILLS ─────────────────────────────────────────────────── */
+#skills{background:var(--bg);padding-top:40px;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;}
+.col-title{font-size:14.5px;font-weight:700;color:var(--text-dark);margin-bottom:22px;display:flex;align-items:center;gap:8px;}
+.col-title i{color:var(--accent);}
+.skill{margin-bottom:14px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;border-left:3px solid transparent;transition:.25s;cursor:default;}
+.skill:hover{border-color:var(--accent);border-left-color:var(--accent);box-shadow:0 0 12px rgba(0,200,232,0.18),0 4px 16px rgba(0,0,0,0.06);transform:translateX(3px);}
+.skill-hdr{display:flex;justify-content:space-between;margin-bottom:8px;}
+.skill-name{font-size:13.5px;font-weight:600;color:var(--text-dark);}
+.skill-pct{font-size:13px;font-weight:700;color:var(--accent);}
+.bar-bg{height:8px;background:#e8edf3;border-radius:4px;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:4px;width:0;transition:width 1.2s ease;}
+.skill-tools{font-size:11px;color:var(--text-light);margin-top:6px;}
+
+/* ── RESUME ─────────────────────────────────────────────────── */
+#resume{background:var(--bg-alt);padding-top:40px;}
+.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;}
+.col-h{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:26px;display:flex;align-items:center;gap:9px;}
+.col-h i{color:var(--accent);}
+.timeline{position:relative;padding-left:22px;}
+.timeline::before{content:'';position:absolute;left:5px;top:10px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--border));}
+.tl-item{position:relative;margin-bottom:30px;}
+.tl-item::before{content:'';position:absolute;left:-21px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent);}
+.tl-date{font-size:10.5px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.8px;background:rgba(0,200,232,0.09);display:inline-block;padding:3px 10px;border-radius:50px;margin-bottom:7px;}
+.tl-role{font-size:14.5px;font-weight:700;color:var(--text-dark);margin-bottom:3px;}
+.tl-org{font-size:12.5px;color:var(--accent);font-weight:600;margin-bottom:7px;}
+.tl-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;}
+.tl-ul{list-style:none;padding:0;}
+.tl-ul li{font-size:12px;color:var(--text-mid);line-height:1.7;padding-left:12px;position:relative;margin-bottom:3px;}
+.tl-ul li::before{content:'·';position:absolute;left:0;color:var(--accent);font-weight:700;}
+.certs-sec{margin-top:44px;}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px;margin-top:20px;}
+.cert-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;padding:18px 10px;text-align:center;transition:.2s;cursor:default;}
+.cert-card:hover{border-color:var(--accent);box-shadow:0 4px 16px rgba(0,200,232,0.14);transform:translateY(-3px);}
+.cert-ico{width:100%;height:80px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;}
+.cert-ico img{max-width:100%;max-height:80px;width:auto;height:auto;object-fit:contain;}
+.cert-nm{font-size:11.5px;font-weight:700;color:var(--text-dark);margin-bottom:3px;}
+.cert-iss{font-size:10px;color:var(--text-light);}
+
+/* ── PROJECTS ───────────────────────────────────────────────── */
+#projects{background:var(--bg-alt);}
+.filter-bar{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px;}
+.fb{display:inline-flex;align-items:center;gap:6px;padding:7px 18px;border-radius:50px;border:2.5px solid var(--border);background:#fff;color:var(--text-mid);font-size:12.5px;font-weight:500;cursor:pointer;transition:.2s;}
+.fb:hover{border-color:var(--accent);color:var(--accent);}
+.fb.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+.fb i{font-size:11px;}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.proj-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:.2s;}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.11);}
+.proj-card.hidden{display:none;}
+.proj-hdr{height:130px;display:flex;align-items:center;justify-content:center;position:relative;}
+.proj-hdr i{font-size:44px;color:rgba(255,255,255,0.75);}
+.proj-hdr .pe{font-size:52px;line-height:1;}
+.proj-badge{position:absolute;top:11px;right:11px;padding:3px 9px;border-radius:50px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
+.b-blue{background:#3b82f6;color:#fff;}
+.b-teal{background:#06b6d4;color:#fff;}
+.b-orange{background:#f97316;color:#fff;}
+.b-purple{background:#8b5cf6;color:#fff;}
+.b-indigo{background:#6366f1;color:#fff;}
+.b-green{background:#10b981;color:#fff;}
+.proj-body{padding:18px;}
+.proj-cat{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);margin-bottom:5px;}
+.proj-title{font-size:14.5px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.proj-desc{font-size:12.5px;color:var(--text-mid);line-height:1.6;margin-bottom:12px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{padding:3px 9px;border-radius:50px;font-size:9.5px;font-weight:600;background:rgba(0,200,232,0.09);color:var(--accent);border:1px solid rgba(0,200,232,0.18);}
+
+/* ── SERVICES ───────────────────────────────────────────────── */
+#services{background:var(--bg);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.svc-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:14px;padding:30px 22px;text-align:center;transition:.25s;}
+.svc-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,200,232,0.11);}
+.svc-ico{width:58px;height:58px;background:rgba(0,200,232,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:21px;color:var(--accent);transition:.25s;}
+.svc-card:hover .svc-ico{background:var(--accent);color:#fff;}
+.svc-title{font-size:14.5px;font-weight:700;color:var(--text-dark);margin-bottom:10px;}
+.svc-desc{font-size:12.5px;color:var(--text-mid);line-height:1.7;margin-bottom:12px;}
+.svc-tools{font-size:10.5px;color:var(--accent);font-weight:600;line-height:1.8;}
+
+/* ── CONTACT ────────────────────────────────────────────────── */
+#contact{background:var(--bg-alt);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;}
+.contact-card{background:#fff;border-radius:14px;padding:34px;border:1px solid var(--border);box-shadow:var(--shadow);}
+.cc-title{font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px;}
+.cc-sub{font-size:13px;color:var(--text-mid);margin-bottom:22px;line-height:1.6;}
+.ci{display:flex;align-items:center;gap:13px;padding:11px 0;}
+.ci-ico{width:40px;height:40px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;flex-shrink:0;}
+.ci-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text-light);}
+.ci-val{font-size:13.5px;font-weight:600;color:var(--text-dark);}
+.ci-val a{color:var(--accent);text-decoration:none;}
+.contact-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+.contact-cta .btn-p{font-size:15px;padding:15px 34px;}
+footer{background:#0d1b2a;color:rgba(255,255,255,0.45);text-align:center;padding:22px;font-size:11.5px;}
+footer strong{color:rgba(255,255,255,0.8);}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media(max-width:980px){
+  :root{--sw:220px;}
+  section{padding:60px 32px;}
+  .about-grid,.resume-grid,.contact-layout{grid-template-columns:1fr;}
+  .skills-grid,.proj-grid,.svc-grid{grid-template-columns:1fr 1fr;}
+  #home{flex-direction:column;}
+  .home-img{display:none;}
+}
+@media(max-width:640px){
+  .sidebar{width:0;overflow:hidden;}
+  .main{margin-left:0;}
+  .skills-grid,.proj-grid,.svc-grid{grid-template-columns:1fr;}
+  section{padding:50px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ────────────────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="profile-img-wrap">
+    <img src="profile.jpg" alt="Rufaro">
+  </div>
+  <div class="sb-name">Rufaro Lynn Mahere</div>
+  <div class="sb-title">Cybersecurity Professional · ISC2 CC</div>
+
+  <div class="sb-wave">
+    <svg viewBox="0 0 280 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,10 Q70,20 140,10 Q210,0 280,10 L280,20 L0,20 Z" fill="rgba(255,255,255,0.07)"/>
+    </svg>
+  </div>
+
+  <div class="socials">
+    <a href="https://linkedin.com/in/rufaro-lynn-mahere" target="_blank" class="soc" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:rmahere@mail.yu.edu" class="soc" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="tel:+12016162454" class="soc" title="Phone"><i class="fas fa-phone"></i></a>
+    <a href="#" class="soc" title="Terminal"><i class="fas fa-terminal"></i></a>
+  </div>
+
+  <nav class="sb-nav">
+    <a href="#home"     class="nav-item active" data-s="home">    <i class="fas fa-house"></i> Home</a>
+    <a href="#about"    class="nav-item"         data-s="about">   <i class="fas fa-user"></i> About</a>
+    <a href="#resume"   class="nav-item"         data-s="resume">  <i class="fas fa-file-lines"></i> Resume</a>
+    <a href="#skills"   class="nav-item"         data-s="skills">  <i class="fas fa-code"></i> Skills</a>
+    <a href="#projects" class="nav-item"         data-s="projects"><i class="fas fa-shield-halved"></i> Projects</a>
+    <a href="#services" class="nav-item"         data-s="services"><i class="fas fa-gears"></i> Services</a>
+    <a href="#contact"  class="nav-item"         data-s="contact"> <i class="fas fa-address-card"></i> Contact</a>
+  </nav>
+</aside>
+
+<!-- ── MAIN ───────────────────────────────────────────────────── -->
+<main class="main">
+
+<!-- HOME ───────────────────────────────────────────────────────── -->
+<section id="home">
+  <div class="home-content">
+    <p class="home-greet">Welcome to my portfolio</p>
+    <h1 class="home-name">Rufaro Lynn<br>Mahere</h1>
+    <p class="home-typing">I'm a <span id="ttext"></span><span id="tcursor"></span></p>
+    <p class="home-creds">
+      MSc Cybersecurity (Yeshiva University) · BSc (Hons) Computer Science · ISC2 CC · Azure Fundamentals (AZ-900)<br>
+      Cybersecurity professional with 6+ years of experience in IT operations across fintech, banking, and mobile
+      network operators. Currently Security Architect (Graduate Intern) at PeBlink · ISC2 &amp; ISACA Member.
+    </p>
+    <div class="home-btns">
+      <a href="#projects" class="btn-p"><i class="fas fa-shield-halved"></i> View Projects</a>
+      <a href="#contact"  class="btn-o"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+    </div>
+  </div>
+  <div class="home-img">
+    <div class="home-img-box"><span class="home-emoji">🛡️</span></div>
+  </div>
+</section>
+
+<!-- ABOUT ──────────────────────────────────────────────────────── -->
+<section id="about">
+  <h2 class="sec-title">About Me</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">Cybersecurity professional and MSc graduate passionate about security operations, DevSecOps, and cloud security.</p>
+
+  <div class="about-grid">
+    <div class="about-left">
+      <div class="info-list">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-user"></i></div>
+          <div><div class="info-label">Name</div><div class="info-val">Rufaro Lynn Mahere</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+          <div><div class="info-label">Location</div><div class="info-val">Jersey City, NJ 07306</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div><div class="info-label">Phone</div><div class="info-val">(201) 616-2454</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div>
+            <div class="info-label">Degree</div>
+            <div class="info-val">MSc Cybersecurity – Yeshiva University<br><small style="font-weight:400;color:#718096">BSc (Hons) Computer Science – Bindura University</small></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-briefcase"></i></div>
+          <div><div class="info-label">Status</div><div class="info-val green">Available for Opportunities</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+          <div><div class="info-label">LinkedIn</div><div class="info-val"><a href="https://linkedin.com/in/rufaro-lynn-mahere" target="_blank">rufaro-lynn-mahere</a></div></div>
+        </div>
+      </div>
+
+      <a href="mailto:rmahere@mail.yu.edu" class="btn-p" style="width:100%;justify-content:center;">
+        <i class="fas fa-handshake"></i> Let's Work Together
+      </a>
+    </div>
+
+    <div class="about-right">
+      <h3 class="about-h">Cybersecurity Professional &amp; MSc Graduate</h3>
+      <p class="about-p">Cybersecurity professional and MSc graduate (Yeshiva University, May 2026) with 6+ years of experience in IT operations across fintech, banking, and mobile network operators. Skilled in security operations, access control, incident management, and DevSecOps practices, with hands-on exposure to CI/CD pipelines, secure deployment workflows, and infrastructure monitoring in regulated production environments.</p>
+      <p class="about-p">ISC2 Certified in Cybersecurity (CC) and Azure Fundamentals (AZ-900) certified, with a demonstrated track record of maintaining high availability, eliminating privileged access risks, and driving data-driven operations.</p>
+      <p class="about-p">Actively seeking roles in Security Operations, DevSecOps, and Cloud Security. Member of ISC2 and ISACA.</p>
+
+      <div class="stats">
+        <div class="stat-c"><span class="stat-n">6+</span><span class="stat-l">Years IT/Security Exp.</span></div>
+        <div class="stat-c"><span class="stat-n">$1M+</span><span class="stat-l">Revenue Loss Prevented</span></div>
+        <div class="stat-c"><span class="stat-n">4</span><span class="stat-l">Certifications</span></div>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-row"><span class="meta-k"><i class="fas fa-flask"></i> Specialization</span><span class="meta-v">Security Operations &amp; DevSecOps</span></div>
+        <div class="meta-row"><span class="meta-k"><i class="fas fa-layer-group"></i> Exp. Level</span><span class="meta-v">Mid-Level IT &amp; Security Professional</span></div>
+        <div class="meta-row"><span class="meta-k"><i class="fas fa-university"></i> Education</span><span class="meta-v">MSc Cybersecurity – YU; BSc CS – Bindura</span></div>
+        <div class="meta-row"><span class="meta-k"><i class="fas fa-globe"></i> Languages</span><span class="meta-v">English</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME ─────────────────────────────────────────────────────── -->
+<section id="resume">
+  <h2 class="sec-title">Resume</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">Cybersecurity professional with MSc in Cybersecurity (Yeshiva University, New York) and BSc (Honours) in Computer Science (Bindura University of Science Education, Zimbabwe).</p>
+
+  <div class="resume-grid">
+    <!-- Left: Education + Certs -->
+    <div>
+      <div class="col-h"><i class="fas fa-graduation-cap"></i> Education</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-date">May 2026</span>
+          <div class="tl-role">Master of Science — Cybersecurity | GPA: 4.0</div>
+          <div class="tl-org">Yeshiva University, Katz School of Science and Health · New York, NY</div>
+          <p class="tl-desc">Relevant Coursework: Cybersecurity Foundations, Risk Management and Cybersecurity, Data and Communication Security, Cybersecurity Audit, Digital Forensics, Architecture of Secure Operating Systems, Cybercrime, Cyberwar &amp; Threat.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">June 2025</span>
+          <div class="tl-role">Master of Science — Strategic Management | GPA: 3.0</div>
+          <div class="tl-org">Chinhoyi University of Technology · Chinhoyi, Zimbabwe</div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">December 2017</span>
+          <div class="tl-role">Bachelor of Science (Honours) — Computer Science | GPA: 3.2</div>
+          <div class="tl-org">Bindura University of Science Education · Bindura, Zimbabwe</div>
+        </div>
+      </div>
+
+      <div class="certs-sec">
+        <div class="col-h"><i class="fas fa-certificate"></i> Certifications</div>
+        <div class="cert-grid">
+          <div class="cert-card"><div class="cert-ico"><i class="fas fa-shield-halved" style="font-size:34px;color:var(--accent)"></i></div><div class="cert-nm">ISC2 CC</div><div class="cert-iss">ISC2 · 2025</div></div>
+          <div class="cert-card"><div class="cert-ico"><i class="fab fa-microsoft" style="font-size:34px;color:var(--accent)"></i></div><div class="cert-nm">AZ-900</div><div class="cert-iss">Microsoft Azure · 2025</div></div>
+          <div class="cert-card"><div class="cert-ico"><i class="fas fa-cloud" style="font-size:34px;color:var(--accent)"></i></div><div class="cert-nm">OCI AI Foundations</div><div class="cert-iss">Oracle · 2025</div></div>
+          <div class="cert-card"><div class="cert-ico"><i class="fas fa-chart-pie" style="font-size:34px;color:var(--accent)"></i></div><div class="cert-nm">Power BI</div><div class="cert-iss">2021</div></div>
+        </div>
+      </div>
+
+      <div class="certs-sec">
+        <div class="col-h"><i class="fas fa-microscope"></i> Projects</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date">2025 – 2026</span>
+            <div class="tl-role">KidGuard — Child Online Grooming Detection System</div>
+            <div class="tl-org">Master's Capstone Project · Supervisor: Leon Flaksin, Yeshiva University</div>
+            <ul class="tl-ul">
+              <li>Designed and developed KidGuard, an end-to-end system to detect and help prevent the online grooming of children on gaming platforms such as Roblox, integrating AI-based detection, real-time monitoring, automated SMS alerting, and evidence preservation</li>
+              <li>Built an AI-driven detection pipeline to identify grooming behaviour in chat interactions in real time, with emphasis on limiting false positives so that guardians receive timely, actionable alerts</li>
+              <li>Designed evidence-preservation workflows to capture and retain a defensible record of flagged interactions, supporting guardian review and escalation to platform trust-and-safety teams or authorities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="certs-sec">
+        <div class="col-h"><i class="fas fa-people-group"></i> Professional Memberships</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-date">June 2025 – Present</span>
+            <div class="tl-role">Member — ISC2</div>
+            <div class="tl-org">International Information System Security Certification Consortium</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">July 2025 – Present</span>
+            <div class="tl-role">Member — ISACA</div>
+            <div class="tl-org">Information Systems Audit and Control Association</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">July 2025 – Present</span>
+            <div class="tl-role">Member — Senior Scam and Fraud Awareness</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Experience -->
+    <div>
+      <div class="col-h"><i class="fas fa-briefcase"></i> Professional Experience</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-date">Jan 2026 – May 2026</span>
+          <div class="tl-role">Security Architect (Graduate Internship)</div>
+          <div class="tl-org">PeBlink · Missouri, United States</div>
+          <ul class="tl-ul">
+            <li>Conduct comprehensive threat assessments of an autonomous robotics platform, identifying how it could be compromised, misused, or manipulated — spanning physical tampering, communication interception, insider threats, and state-level adversaries — and translate findings into actionable security controls</li>
+            <li>Develop a Human-in-the-Loop (HITL) governance framework defining when the platform may act autonomously and when a human operator must authorize a decision, ensuring accountability for every consequential action</li>
+            <li>Produce security architecture documentation, governance policies, and stakeholder-facing diagrams communicating risk, control design, and human-oversight requirements to both technical and non-technical audiences</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Feb 2021 – Jan 2025</span>
+          <div class="tl-role">Service Delivery &amp; DevOps Engineer</div>
+          <div class="tl-org">EcoCash Holdings Limited · Harare, Zimbabwe</div>
+          <ul class="tl-ul">
+            <li>Delivered 2nd-level support resolving 95% of organization-wide operational tickets within SLA; troubleshot and implemented corrective actions that reduced critical system downtime to under 4 hours across production platforms</li>
+            <li>Maintained 99.9% uptime across production environments by configuring Zabbix and Checkmk monitoring solutions, preventing $1M+ in potential revenue loss through proactive alerting and rapid incident response</li>
+            <li>Performed DevOps and DevSecOps functions for 1.5 months, collaborating with engineering teams to manage CI/CD pipeline deployments, enforce secure deployment practices, and coordinate zero-rollback patch releases into production</li>
+            <li>Collaborated with development and DevOps teams to deploy fixes, patches, and system upgrades into production environments with 0% rollback rate, ensuring release integrity and environment stability</li>
+            <li>Safeguarded data assets through quarterly financial access reviews and enforcement of logical access controls, eliminating 100% of privileged account risks identified during internal audits</li>
+            <li>Led Power BI environment setup including data source integration (SQL Server), dashboard creation, and automated data refresh pipelines to support operational reporting across all business units</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <span class="tl-date">Jan 2019 – Jan 2021</span>
+          <div class="tl-role">IT Operations Officer</div>
+          <div class="tl-org">FBC Bank Limited · Harare, Zimbabwe</div>
+          <ul class="tl-ul">
+            <li>Directed end-of-cycle, end-of-month, and year-end processing for FBC Holdings core banking systems across 22 branches, ensuring accurate reconciliation of daily financial operations, internal ledger updates, and regulatory/audit report generation</li>
+            <li>Managed and executed daily incremental and full backups for critical systems including EFT transaction platforms, achieving a 99.9% successful restore rate and ensuring business continuity compliance</li>
+            <li>Documented system configurations, change logs, and operational procedures to support knowledge transfer and maintain continuity of system administration across the IT operations team</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS ─────────────────────────────────────────────────────── -->
+<section id="skills">
+  <h2 class="sec-title">Skills</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">Cybersecurity professional with hands-on proficiency in security operations, access control, DevSecOps practices, cloud platforms, and enterprise data &amp; BI tools — built through 6+ years across fintech, banking, and mobile network operators.</p>
+
+  <div class="skills-grid">
+    <div>
+      <div class="col-title"><i class="fas fa-shield-halved"></i> Security Operations &amp; DevSecOps</div>
+
+      <div class="skill" data-p="92"><div class="skill-hdr"><span class="skill-name">Access Control &amp; Privileged Account Mgmt</span><span class="skill-pct">92%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Logical access reviews, privileged account management, audit support</div></div>
+
+      <div class="skill" data-p="90"><div class="skill-hdr"><span class="skill-name">Incident Management &amp; Disaster Recovery</span><span class="skill-pct">90%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Incident management, backup and recovery, business continuity</div></div>
+
+      <div class="skill" data-p="90"><div class="skill-hdr"><span class="skill-name">Infrastructure Monitoring</span><span class="skill-pct">90%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Zabbix, Checkmk, F5 load balancing</div></div>
+
+      <div class="skill" data-p="85"><div class="skill-hdr"><span class="skill-name">DevSecOps &amp; CI/CD Pipelines</span><span class="skill-pct">85%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Jenkins, secure deployment practices, patch management</div></div>
+
+      <div class="skill" data-p="78"><div class="skill-hdr"><span class="skill-name">Linux &amp; Network Troubleshooting</span><span class="skill-pct">78%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Linux, Wireshark, protocol analysis</div></div>
+    </div>
+
+    <div>
+      <div class="col-title"><i class="fas fa-cloud"></i> Cloud, Data &amp; Platforms</div>
+
+      <div class="skill" data-p="90"><div class="skill-hdr"><span class="skill-name">BI &amp; Analytics</span><span class="skill-pct">90%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Power BI, Tableau, Postman, basic REST API testing</div></div>
+
+      <div class="skill" data-p="88"><div class="skill-hdr"><span class="skill-name">Banking &amp; Payments Platforms</span><span class="skill-pct">88%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Flexcube, Postilion, EFT systems</div></div>
+
+      <div class="skill" data-p="82"><div class="skill-hdr"><span class="skill-name">Database Administration</span><span class="skill-pct">82%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Oracle 12c, MySQL, PostgreSQL, SQL Server</div></div>
+
+      <div class="skill" data-p="80"><div class="skill-hdr"><span class="skill-name">Cloud Platforms</span><span class="skill-pct">80%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">Microsoft Azure (AZ-900), Oracle Cloud Infrastructure (OCI AI Foundations)</div></div>
+
+      <div class="skill" data-p="85"><div class="skill-hdr"><span class="skill-name">Core Banking Operations</span><span class="skill-pct">85%</span></div><div class="bar-bg"><div class="bar-fill"></div></div><div class="skill-tools">End-of-cycle processing, reconciliation, regulatory reporting</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS ────────────────────────────────────────────────────── -->
+<section id="projects">
+  <h2 class="sec-title">Security Projects</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">A selection of security operations initiatives, DevSecOps builds, and IT operations engagements — real-world outcomes across fintech, banking, and mobile network operator environments.</p>
+
+  <div class="filter-bar">
+    <button class="fb active" data-f="all"><i class="fas fa-table-cells"></i> All Engagements</button>
+    <button class="fb" data-f="security"><i class="fas fa-shield-halved"></i> Security &amp; Access</button>
+    <button class="fb" data-f="devsecops"><i class="fas fa-code-branch"></i> DevSecOps &amp; CI/CD</button>
+    <button class="fb" data-f="clouddata"><i class="fas fa-cloud"></i> Cloud &amp; Data</button>
+    <button class="fb" data-f="operations"><i class="fas fa-server"></i> IT Operations</button>
+    <button class="fb" data-f="research"><i class="fas fa-flask"></i> Research</button>
+  </div>
+
+  <div class="proj-grid">
+
+    <div class="proj-card" data-c="security">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+        <span class="pe">🤖</span>
+        <span class="proj-badge b-indigo">Current Role</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Security Architecture · PeBlink · Jan 2026 – May 2026</div>
+        <div class="proj-title">Autonomous Robotics Threat Assessment &amp; HITL Governance</div>
+        <p class="proj-desc">Conducting comprehensive threat assessments of an autonomous robotics platform spanning physical tampering, communication interception, insider threats, and state-level adversaries. Developing a Human-in-the-Loop (HITL) governance framework defining when the platform may act autonomously vs. when a human operator must authorize a decision.</p>
+        <div class="tags"><span class="tag">Threat Assessment</span><span class="tag">HITL Governance</span><span class="tag">Security Architecture</span><span class="tag">Robotics</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="operations">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#065f46,#06b6d4)">
+        <span class="pe">📡</span>
+        <span class="proj-badge b-teal">99.9% Uptime</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Infrastructure Monitoring · EcoCash Holdings</div>
+        <div class="proj-title">Production Monitoring &amp; Uptime Assurance</div>
+        <p class="proj-desc">Maintained 99.9% uptime across production environments by configuring Zabbix and Checkmk monitoring solutions, preventing $1M+ in potential revenue loss through proactive alerting and rapid incident response.</p>
+        <div class="tags"><span class="tag">Zabbix</span><span class="tag">Checkmk</span><span class="tag">Monitoring</span><span class="tag">Incident Response</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="devsecops">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#7c2d12,#f97316)">
+        <span class="pe">🔁</span>
+        <span class="proj-badge b-orange">0% Rollback Rate</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">DevSecOps · EcoCash Holdings</div>
+        <div class="proj-title">Zero-Rollback CI/CD &amp; Secure Deployment</div>
+        <p class="proj-desc">Performed DevOps and DevSecOps functions, collaborating with engineering teams to manage CI/CD pipeline deployments, enforce secure deployment practices, and coordinate zero-rollback patch releases into production with 0% rollback rate.</p>
+        <div class="tags"><span class="tag">CI/CD</span><span class="tag">Jenkins</span><span class="tag">Secure Deployment</span><span class="tag">DevSecOps</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="security">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#064e3b,#10b981)">
+        <span class="pe">🔐</span>
+        <span class="proj-badge b-green">100% Risk Elimination</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Access Control · EcoCash Holdings</div>
+        <div class="proj-title">Privileged Access Risk Elimination</div>
+        <p class="proj-desc">Safeguarded data assets through quarterly financial access reviews and enforcement of logical access controls, eliminating 100% of privileged account risks identified during internal audits.</p>
+        <div class="tags"><span class="tag">Access Reviews</span><span class="tag">Privileged Access Mgmt</span><span class="tag">Audit</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="clouddata">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#1e1b4b,#6366f1)">
+        <span class="pe">📊</span>
+        <span class="proj-badge b-purple">Enterprise BI</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Cloud &amp; Data · EcoCash Holdings</div>
+        <div class="proj-title">Power BI Reporting Environment</div>
+        <p class="proj-desc">Led Power BI environment setup including data source integration (SQL Server), dashboard creation, and automated data refresh pipelines to support operational reporting across all business units.</p>
+        <div class="tags"><span class="tag">Power BI</span><span class="tag">SQL Server</span><span class="tag">Dashboards</span><span class="tag">Reporting</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="operations">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">
+        <span class="pe">🏦</span>
+        <span class="proj-badge b-blue">99.9% Restore Rate</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">IT Operations · FBC Bank Limited</div>
+        <div class="proj-title">Core Banking Operations &amp; Backup Assurance</div>
+        <p class="proj-desc">Directed end-of-cycle, end-of-month, and year-end processing for FBC Holdings core banking systems across 22 branches. Managed daily incremental and full backups for critical systems including EFT transaction platforms, achieving a 99.9% successful restore rate.</p>
+        <div class="tags"><span class="tag">Core Banking</span><span class="tag">Backup &amp; Recovery</span><span class="tag">EFT Systems</span><span class="tag">Reconciliation</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" data-c="research">
+      <div class="proj-hdr" style="background:linear-gradient(135deg,#0f4c75,#1b6ca8)">
+        <span class="pe">🛡️🧒</span>
+        <span class="proj-badge b-blue">Master's Capstone</span>
+      </div>
+      <div class="proj-body">
+        <div class="proj-cat">Research · Yeshiva University · 2025–2026</div>
+        <div class="proj-title">KidGuard — Child Online Grooming Detection</div>
+        <p class="proj-desc">Designed and developed an end-to-end system to detect and help prevent the online grooming of children on gaming platforms such as Roblox, integrating AI-based detection, real-time monitoring, automated SMS alerting, and evidence preservation, with workflows supporting guardian review and escalation to authorities.</p>
+        <div class="tags"><span class="tag">AI Detection</span><span class="tag">Child Safety</span><span class="tag">Real-time Monitoring</span><span class="tag">Evidence Preservation</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES ────────────────────────────────────────────────────── -->
+<section id="services">
+  <h2 class="sec-title">Services</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">Security services I offer to organizations seeking to govern, assess, and defend their environments.</p>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-user-shield"></i></div>
+      <div class="svc-title">Security Operations &amp; Access Control</div>
+      <p class="svc-desc">Access control, privileged account management, logical access reviews, and audit support to safeguard organizational data assets and eliminate unauthorized access risk.</p>
+      <div class="svc-tools">Access Control · PAM · Audit Support · Logical Access Reviews</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-fire-extinguisher"></i></div>
+      <div class="svc-title">Incident Management &amp; Disaster Recovery</div>
+      <p class="svc-desc">Incident management, backup and recovery planning, and disaster recovery coordination to maintain business continuity in regulated production environments.</p>
+      <div class="svc-tools">Incident Management · Backup &amp; Recovery · Disaster Recovery</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-code-branch"></i></div>
+      <div class="svc-title">DevSecOps &amp; CI/CD</div>
+      <p class="svc-desc">CI/CD pipeline management, secure deployment practices, and patch management coordinated with engineering teams for zero-rollback production releases.</p>
+      <div class="svc-tools">Jenkins · Secure Deployment · Patch Management</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-chart-line"></i></div>
+      <div class="svc-title">Infrastructure Monitoring</div>
+      <p class="svc-desc">Infrastructure monitoring and proactive alerting using Zabbix and Checkmk, plus F5 load balancing, to maintain high availability across production platforms.</p>
+      <div class="svc-tools">Zabbix · Checkmk · F5 Load Balancing</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-cloud"></i></div>
+      <div class="svc-title">Cloud &amp; Database Support</div>
+      <p class="svc-desc">Cloud fundamentals across Microsoft Azure and Oracle Cloud Infrastructure, alongside hands-on database administration across Oracle, MySQL, PostgreSQL, and SQL Server.</p>
+      <div class="svc-tools">Azure (AZ-900) · OCI · Oracle 12c · SQL Server</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-ico"><i class="fas fa-chart-pie"></i></div>
+      <div class="svc-title">BI &amp; Analytics</div>
+      <p class="svc-desc">Power BI and Tableau dashboard design, automated data refresh pipelines, and REST API testing to support data-driven operational reporting.</p>
+      <div class="svc-tools">Power BI · Tableau · Postman · REST APIs</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ─────────────────────────────────────────────────────── -->
+<section id="contact">
+  <h2 class="sec-title">Contact</h2>
+  <div class="sec-line"></div>
+  <p class="sec-sub">Feel free to reach out for security engagements, collaborations, or any inquiries. I'm always open to discussing new opportunities.</p>
+
+  <div class="contact-layout">
+    <div class="contact-card">
+      <div class="cc-title">Get In Touch</div>
+      <p class="cc-sub">Available for Security Operations, DevSecOps, and Cloud Security opportunities. Don't hesitate to reach out.</p>
+      <div class="ci">
+        <div class="ci-ico"><i class="fas fa-location-dot"></i></div>
+        <div><div class="ci-label">Location</div><div class="ci-val">Jersey City, NJ 07306</div></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><i class="fas fa-phone"></i></div>
+        <div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:+12016162454">(201) 616-2454</a></div></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><i class="fas fa-envelope"></i></div>
+        <div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:rmahere@mail.yu.edu">rmahere@mail.yu.edu</a></div></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ico"><i class="fab fa-linkedin-in"></i></div>
+        <div><div class="ci-label">LinkedIn</div><div class="ci-val"><a href="https://linkedin.com/in/rufaro-lynn-mahere" target="_blank">rufaro-lynn-mahere</a></div></div>
+      </div>
+    </div>
+
+    <div class="contact-cta">
+      <a href="mailto:rmahere@mail.yu.edu" class="btn-p">
+        <i class="fas fa-envelope"></i> Send Me an Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; Copyright <strong>Rufaro Lynn Mahere</strong> · All Rights Reserved</p>
+  <p style="margin-top:6px;">Cybersecurity Professional · MSc Cybersecurity, Yeshiva University · ISC2 CC · AZ-900</p>
+</footer>
+
+</main>
+
+<script>
+// ── Typing animation ──────────────────────────────────────────────
+const roles=['ISC2 CC','Security Operations Professional','DevSecOps Engineer','Cloud Security Professional','IT Operations Officer','Service Delivery Engineer'];
+let ri=0,ci=0,del=false;
+const tel=document.getElementById('ttext');
+function type(){
+  const w=roles[ri];
+  if(!del){tel.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1900);return;}}
+  else{tel.textContent=w.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(type,del?55:95);
+}
+type();
+
+// ── Skill bars ────────────────────────────────────────────────────
+let animated=false;
+const skillSec=document.getElementById('skills');
+new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting&&!animated){
+    animated=true;
+    setTimeout(()=>{
+      document.querySelectorAll('.skill[data-p]').forEach(s=>{
+        const f=s.querySelector('.bar-fill');
+        if(f) f.style.width=s.dataset.p+'%';
+      });
+    },150);
+  }
+},{threshold:0.2}).observe(skillSec);
+
+// ── Active nav on scroll ──────────────────────────────────────────
+const secs=document.querySelectorAll('section[id]');
+const navs=document.querySelectorAll('.nav-item');
+function updateNav(){
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-90)cur=s.id;});
+  navs.forEach(n=>n.classList.toggle('active',n.dataset.s===cur));
+}
+window.addEventListener('scroll',updateNav,{passive:true});
+navs.forEach(n=>n.addEventListener('click',e=>{
+  e.preventDefault();
+  document.getElementById(n.dataset.s)?.scrollIntoView({behavior:'smooth'});
+}));
+
+// ── Project filter ────────────────────────────────────────────────
+document.querySelectorAll('.fb').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.fb').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  const f=b.dataset.f;
+  document.querySelectorAll('.proj-card').forEach(c=>{
+    c.classList.toggle('hidden',f!=='all'&&c.dataset.c!==f);
+  });
+}));
+</script>
+</body>
+</html>
